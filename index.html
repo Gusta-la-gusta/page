@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>focaí</title>
+    <link rel="stylesheet" href="/site/css/style.css">
+    <link rel="website icon" href="/site/img/67eab319-925d-4830-8e10-ff2eeb37f1c4-removebg-preview.png">
+    <script src="https://kit.fontawesome.com/5e8dbe7965.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+    <header>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <button class="clique">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </li>
+                <li>
+                    <button class="modo-escuro">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </button>
+                </li>
+                <li>
+                    <button class="botao">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <nav class="menu-lateral">
+            <ul>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('pagina inicial.html')">
+                        <span class="icone">
+                            <i class="fa-solid fa-house"></i>
+                        </span>
+                        <span class="parte">
+                            Pagina inicial
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('cronograma.html')">
+                        <span class="icone">
+                             <i class="fa-solid fa-calendar-alt"></i>
+                        </span>
+                        <span class="parte">
+                            Cronograma de estudos
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('temas enem.html')">
+                        <span class="icone">
+                            <i class="fa-solid fa-list-alt"></i>
+                        </span>
+                        <span class="parte">
+                            Temas para o enem
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('video aulas.html')">
+                        <span class="icone">
+                            <i class="fa-solid fa-play-circle"></i>
+                        </span>
+                        <span class="parte">
+                            Videos aulas/ENEM
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('cursinhos.html')">
+                        <span class="icone">
+                            <i class="fa-solid fa-school"></i>
+                        </span>
+                        <span class="parte">
+                            Cursinhos
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('tecnicas de estudo.html')">
+                        <span class="icone">
+                            <i class="fa-solid fa-book"></i>
+                        </span>
+                        <span class="parte">
+                            Tecnicas de estudo
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('tecnicas de prova.html')">
+                        <span class="icone">
+                            <i class="fa-solid fa-stopwatch (tempo de prova)"></i>
+                        </span>
+                        <span class="parte">
+                            Tecnicas para provas
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="event.preventDefault(); carregarPagina('provas antigas.html')">
+                        <span class="icone">
+                            <i class="fas fa-file-alt"></i>
+                        </span>
+                        <span class="parte">
+                            Provas antigas
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="id" id="conteudo">
+    </main>
+</body>
+<script src="/site/js/SPA.js" defer></script>
+<script src="/site/js/menulateral.js" defer></script>
+<script src="/site/js/modoescuro.js" defer></script>
+<script src="/site/js/contagem enem.js" defer></script>
+<script src="/site/js/saudação.js" defer></script>
+</html>

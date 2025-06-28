@@ -1,0 +1,1227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+/*Area de cores*/
+:root{
+    --plano-de-fundo: #E6ECE9;
+    --mouse-sobre-os-links-do-menu:	#6F8876;
+    --menu-lateral: #5A7262;
+    --fundo-nav-bar:#F5F5F5;
+    --dundo-de-divs:#F8F9FA;
+    --branco-das-palavras: 	#fff;
+    --branco: #ffffff;
+    --icones-e-palavras:#000;
+    --cor-ao-passar-o-mouse-nos-icones:#e0e0e0;
+}
+
+:root.dark{
+    --plano-de-fundo: #121212;
+    --mouse-sobre-os-links-do-menu:	#2C2C4A;
+    --menu-lateral: #1A1A2E;
+    --fundo-nav-bar: #232323;
+    --dundo-de-divs:#3A3A3A;
+    --branco-das-palavras: 	#fff;
+    --branco: #1F1F1F; 
+    --icones-e-palavras: #FFFFFF;
+    --cor-ao-passar-o-mouse-nos-icones: #3A3A3A;
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+html{
+    overflow: hidden;
+}
+
+body{
+    overflow: hidden;
+    background-color: var(--plano-de-fundo);
+    font-family: "poppins";
+    transition: background-color 1s ease;
+}
+
+/*area da nav bar*/
+nav.nav-bar ul {
+
+
+    background-color: var(--branco);
+    transition: background-color 1s ease;
+    display: flex;
+    align-items: center;
+    height: 85px;
+    gap: 10px;
+    width: 100%;
+    padding: 36px 20px;
+}
+
+
+nav.nav-bar ul li:nth-child(1){
+    margin-right: auto;
+}
+
+nav.nav-bar ul li{
+    list-style-type: none;
+}
+
+nav.nav-bar ul li button{
+    border: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%; 
+    background-color: var(--branco);
+    color: var(--icones-e-palavras);
+    transition: background-color 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav.nav-bar ul li button:hover{
+    border-radius: 50%;
+    background-color: var(--cor-ao-passar-o-mouse-nos-icones);
+    transition: background-color 0.5s ease;
+}
+
+nav.nav-bar ul li button i{
+    font-size: 27px;
+    color: var(--icones);
+    transition: color 1s ease;
+}
+
+/*menu lateral*/
+nav.menu-lateral {
+    color: var(--branco-das-palavras);
+    background-color: var(--menu-lateral);
+    transition: background-color 1s ease;
+    height: calc(100vh - 85px); /* ocupa a altura total, descontando a navbar */
+    width: 400px;
+    position: fixed;
+    top: 85px;
+    left: -400px;
+    z-index: 9;
+    transition: 500ms;
+    overflow-y: auto;   /* <--- habilita scroll vertical */
+    overflow-x: hidden; /* <--- evita scroll horizontal */
+}
+
+nav.menu-lateral.ativo{
+    left: 0;
+}
+
+nav.menu-lateral ul{
+    padding: 0;
+    margin: 28px 0;
+}
+
+nav.menu-lateral ul li{
+    list-style-type: none;
+}
+
+nav.menu-lateral ul li a{
+    text-decoration: none;
+    color: var(--branco-das-palavras);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 36px;
+    margin-bottom: 10PX;
+}
+
+nav.menu-lateral ul li a:hover{
+    background-color: var(--mouse-sobre-os-links-do-menu);
+}
+
+
+nav.menu-lateral ul li a span.icone{
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;  
+    height: 40px; 
+}
+
+nav.menu-lateral ul li a span.parte{
+    font-size: 22px;
+    line-height: 1;
+}
+
+/*main*/
+main{
+    height: 100vh;
+    margin-top: 85px;
+    overflow: auto;
+    background-color: var(--plano-de-fundo);
+    color: var(--icones-e-palavras);
+    transition: margin-left 0.5s ease, color 0.5s ease, background-color 0.5s ease;
+}
+main.ativo{
+    margin-left: 400px;
+}
+
+/*saudações*/
+/* Saudação */
+/* Agrupamento do lado esquerdo (saudação + section) */
+div.inicio {
+    display: flex;
+    padding-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 25px;
+}
+
+div.lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+div.bom {
+    height: auto;
+    margin-bottom: 40px; 
+}
+
+
+div.secao-enem {
+    height: auto;
+    width: 100%;
+}
+
+div.contador {
+    height: auto;
+    width: 50%;
+}
+
+div.contador img {
+    margin-top: 45px;
+    height: 500px;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    z-index: 3;
+}
+div.contador img:hover{
+    transform: perspective(1000px) translateZ(-20px);
+}
+/*area enem*/
+div.inicio div.lado-esquerdo div.secao-enem {
+    height: 505px;
+}
+
+div.inicio div.lado-esquerdo div.secao-enem a{
+    text-decoration: none;
+    color: var(--icones-e-palavras);
+}
+
+div.inicio div.lado-esquerdo div.secao-enem a div.data{
+    background-color: var(--dundo-de-divs);
+    color: var(--icones-e-palavras);
+    display: flex;
+    align-items: center;
+    margin-bottom: 19px;
+    margin-right: 60px;
+    height: 139px;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+    border-radius: 10px;
+    padding-left: 30px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    font-size: 17px;
+}
+div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
+    transform: perspective(1000px) translateZ(-20px);
+}
+
+/*mitos e verdades*/
+.caixa-maior {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 60px;
+    flex-wrap: wrap; /* para responsividade */
+    padding-bottom: 20px;
+}
+
+.caixa-maior .imagem {
+    width: 45%;
+    min-width: 280px;
+    height: auto;
+}
+
+.caixa-maior .imagem img {
+    width: 100%;
+    height: 536px;
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.5s ease;
+}
+
+.caixa-maior .imagem img:hover {
+    transform: scale(0.98);
+}
+
+.mitos-e-verdades {
+    width: 50.2%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.texto-mito {
+    background-color: var(--dundo-de-divs);
+    padding: 18px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--icones-e-palavras);
+    line-height: 1.6;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: background-color 1s ease, transform 0.5s ease;
+    font-size: 21px;
+}
+.texto-mito:hover{
+    transform: perspective(1000px) translateZ(-20px);
+}
+
+/*comentarios*/
+.comentarios {
+    background-color: var(--dundo-de-divs);
+    padding: 60px;
+    margin: 60px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transition: background-color 1s ease, transform 0.5s ease;
+}
+
+.comentarios h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: var(--icones-e-palavras);
+}
+
+.form-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-comentario input,
+.form-comentario textarea {
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    resize: none;
+    font-family: "Poppins";
+}
+
+.form-comentario button {
+    padding: 14px;
+    background-color: var(--menu-lateral);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.form-comentario button:hover {
+    background-color: var(--mouse-sobre-os-links-do-menu);
+}
+
+/*cronograma*/
+.pagina-interna {
+    padding: 60px;
+    margin: 0 auto;
+    max-width: 1400px;
+    font-family: "Poppins";
+    background-color: var(--plano-de-fundo);
+    transition: background-color 1s ease, color 1s ease;
+    color: var(--icones-e-palavras);
+}
+
+.cabecalho-pagina {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cabecalho-pagina h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--icones-e-palavras);
+}
+
+.cabecalho-pagina p {
+    font-size: 18px;
+    color: var(--icones-e-palavras);
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.conteudo-cronograma {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.bloco {
+    background-color: var(--dundo-de-divs);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: background-color 1s ease;
+}
+
+.bloco h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--icones-e-palavras);
+}
+
+.bloco p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: var(--icones-e-palavras);
+}
+
+.bloco ul,
+.bloco ol {
+    font-size: 18px;
+    padding-left: 24px;
+    line-height: 1.7;
+}
+
+.bloco ul li,
+.bloco ol li {
+    margin-bottom: 12px;
+}
+
+.cards-erro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.card-erro {
+    background-color: var(--dundo-de-divs);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.3s ease;
+}
+
+.card-erro:hover {
+    transform: scale(1.02);
+}
+
+.card-erro h3 {
+    font-size: 20px;
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+.card-erro p {
+    font-size: 17px;
+    color: var(--icones-e-palavras);
+    line-height: 1.5;
+}
+
+/*temas enem*/
+.pagina-temas {
+    padding: 60px;
+    margin: 0 auto;
+    max-width: 1400px;
+    font-family: "Poppins";
+    background-color: var(--plano-de-fundo);
+    color: var(--icones-e-palavras);
+}
+
+.pagina-temas .cabecalho-pagina {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pagina-temas .cabecalho-pagina h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.pagina-temas .cabecalho-pagina p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.area-tema {
+    background-color: var(--dundo-de-divs);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.area-tema h2 {
+    font-size: 26px;
+    color: var(--icones-e-palavras);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.area-tema .conteudo ul {
+    font-size: 18px;
+    line-height: 1.7;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.area-tema .conteudo ul li {
+    margin-bottom: 10px;
+}
+
+.area-tema .conteudo p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/*video aulas*/
+.pagina-videos {
+    padding: 60px;
+    margin: 0 auto;
+    max-width: 1400px;
+    font-family: "Poppins";
+    background-color: var(--plano-de-fundo);
+    color: var(--icones-e-palavras);
+}
+
+.pagina-videos .cabecalho-pagina {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pagina-videos .cabecalho-pagina h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.pagina-videos .cabecalho-pagina p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.bloco-videos {
+    background-color: var(--dundo-de-divs);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.bloco-videos h2 {
+    font-size: 26px;
+    color: var(--icones-e-palavras);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cards-video {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.card-video {
+    background-color: var(--branco);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: var(--icones-e-palavras);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-video:hover {
+    transform: scale(1.03);
+    background-color: var(--cor-ao-passar-o-mouse-nos-icones);
+}
+
+.card-video h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-video p {
+    font-size: 16px;
+    color: #555;
+}
+
+/*cursinhos*/
+main {
+    background-color: var(--plano-de-fundo);
+    font-family: "Poppins";
+    color: var(--icones-e-palavras);
+    margin: 0;
+}
+
+.pagina-cursinhos {
+    padding: 60px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.cabecalho-pagina {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cabecalho-pagina h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cabecalho-pagina p {
+    font-size: 18px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.grid-cursinhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-cursinho {
+    background-color: var(--dundo-de-divs);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.card-cursinho:hover {
+    transform: scale(1.02);
+}
+
+.card-cursinho h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-cursinho p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.estrela {
+    color: gold;
+}
+
+/*tecnicas de estudo*/
+.pagina-tecnicas {
+  padding: 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--plano-de-fundo);
+  color: var(--icones-e-palavras);
+  transition: background-color 1s ease, color 1s ease;
+  text-align: center;
+
+}
+
+.pagina-tecnicas .cabecalho-pagina {
+  margin-bottom: 50px;
+}
+
+.pagina-tecnicas .cabecalho-pagina h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--icones-e-palavras);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagina-tecnicas .cabecalho-pagina p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--icones-e-palavras);
+}
+
+.tecnica-estudo {
+  background-color: var(--dundo-de-divs);
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  margin-bottom: 30px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.tecnica-estudo:hover {
+  background-color: var(--cor-ao-passar-o-mouse-nos-icones);
+}
+
+.tecnica-estudo h2 {
+  font-size: 22px;
+  color: var(--icones-e-palavras);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tecnica-estudo h2 i {
+  color: crimson;
+  font-size: 24px;
+  min-width: 28px;
+}
+
+.tecnica-estudo p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--icones-e-palavras);
+  margin: 0;
+}
+
+/*tecnicas de prova*/
+.pagina-prova {
+  padding: 60px;
+  margin: 0 auto;
+  max-width: 1400px;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--plano-de-fundo);
+  color: var(--icones-e-palavras);
+}
+
+.pagina-prova .cabecalho-pagina {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pagina-prova .cabecalho-pagina h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.pagina-prova .cabecalho-pagina p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de cards */
+.grid-tecnicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.card-prova {
+  background-color: var(--dundo-de-divs);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card-prova:hover {
+  transform: translateY(-5px);
+  background-color: var(--cor-ao-passar-o-mouse-nos-icones);
+}
+
+.card-prova i {
+  font-size: 36px;
+  color: crimson;
+  margin-bottom: 15px;
+}
+
+.card-prova h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card-prova p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  color: var(--icones-e-palavras);
+}
+
+.card-prova span {
+  font-size: 16px;
+  color: #444;
+  font-style: italic;
+}
+
+/*metodos de estudo*/
+.pagina-metodos-estudo {
+  padding: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--plano-de-fundo);
+  color: var(--icones-e-palavras);
+}
+
+.pagina-metodos-estudo .cabecalho-pagina {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pagina-metodos-estudo .cabecalho-pagina h1 {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pagina-metodos-estudo .cabecalho-pagina p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Grade de métodos */
+.metodos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.metodo-card {
+  background-color: var(--dundo-de-divs);
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.metodo-card:hover {
+  background-color: var(--cor-ao-passar-o-mouse-nos-icones);
+  transform: scale(1.03);
+}
+
+.metodo-card h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--icones-e-palavras);
+}
+
+.metodo-card h2 i {
+  font-size: 26px;
+  color: crimson;
+  min-width: 28px;
+}
+
+.metodo-card p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--icones-e-palavras);
+  margin: 0;
+}
+
+/*provas antigas*/
+.pagina-provas-enem {
+  padding: 60px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--plano-de-fundo);
+  color: var(--icones-e-palavras);
+}
+
+.pagina-provas-enem .cabecalho-pagina {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pagina-provas-enem .cabecalho-pagina h1 {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.pagina-provas-enem .cabecalho-pagina p {
+  font-size: 17px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.lista-provas ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-provas li {
+  background-color: var(--dundo-de-divs);
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.lista-provas li:hover {
+  background-color: var(--cor-ao-passar-o-mouse-nos-icones);
+}
+
+.lista-provas a {
+  text-decoration: none;
+  color: var(--icones-e-palavras);
+  font-size: 17px;
+  display: block;
+}
+
+/* ==================== */
+/* MEDIA QUERIES - TABLET (768px) */
+/* ==================== */
+@media (max-width: 768px) {
+    /* Menu Lateral */
+    nav.menu-lateral {
+        width: 320px;
+    }
+    
+    main.ativo {
+        margin-left: 320px;
+    }
+    
+    /* Nav Bar */
+    nav.nav-bar ul {
+        padding: 30px 15px;
+        height: 75px;
+    }
+    
+    nav.nav-bar ul li button {
+        width: 55px;
+        height: 55px;
+    }
+    
+    /* Página Inicial */
+    div.inicio {
+        flex-direction: column;
+        padding-top: 40px;
+        margin: 40px;
+        font-size: 22px;
+    }
+    
+    div.lado-esquerdo, 
+    div.contador {
+        width: 100%;
+    }
+    
+    div.contador img {
+        height: auto;
+        max-height: 400px;
+        margin-top: 30px;
+    }
+    
+    div.inicio div.lado-esquerdo div.secao-enem a div.data {
+        margin-right: 0;
+        height: auto;
+        padding: 20px;
+    }
+    
+    /* Mitos e Verdades */
+    .caixa-maior {
+        flex-direction: column;
+        margin: 40px;
+        gap: 25px;
+    }
+    
+    .caixa-maior .imagem, 
+    .mitos-e-verdades {
+        width: 100%;
+    }
+    
+    .caixa-maior .imagem img {
+        height: auto;
+        max-height: 400px;
+    }
+    
+    /* Páginas Internas */
+    .pagina-interna,
+    .pagina-temas,
+    .pagina-videos,
+    .pagina-cursinhos,
+    .pagina-tecnicas,
+    .pagina-prova,
+    .pagina-metodos-estudo,
+    .pagina-provas-enem {
+        padding: 40px;
+    }
+    
+    .conteudo-cronograma {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    
+    .bloco,
+    .area-tema,
+    .bloco-videos {
+        padding: 30px;
+    }
+    
+    /* Comentários */
+    .comentarios {
+        padding: 40px;
+        margin: 40px;
+    }
+    
+    /* Grids */
+    .grid-cursinhos,
+    .grid-tecnicas {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    /* Cards */
+    .card-video {
+        max-width: calc(50% - 10px);
+    }
+    
+    .cabecalho-pagina h1 {
+        font-size: 28px;
+    }
+    
+    .cabecalho-pagina p {
+        font-size: 16px;
+    }
+}
+
+/* ==================== */
+/* MEDIA QUERIES - CELULAR (480px) */
+/* ==================== */
+@media (max-width: 480px) {
+    /* Nav Bar */
+    nav.nav-bar ul {
+        height: 65px;
+        padding: 20px 10px;
+    }
+    
+    nav.nav-bar ul li button {
+        width: 45px;
+        height: 45px;
+    }
+    
+    nav.nav-bar ul li button i {
+        font-size: 22px;
+    }
+    
+    /* Menu Lateral */
+    nav.menu-lateral {
+        width: 280px;
+        height: calc(100vh - 65px);
+        top: 65px;
+    }
+    
+    main.ativo {
+        margin-left: 280px;
+    }
+    
+    nav.menu-lateral ul li a {
+        padding: 15px 20px;
+        gap: 20px;
+    }
+    
+    nav.menu-lateral ul li a span.icone {
+        font-size: 22px;
+        width: 22px;
+    }
+    
+    nav.menu-lateral ul li a span.parte {
+        font-size: 18px;
+    }
+    
+    /* Página Inicial */
+    div.inicio {
+        margin: 20px;
+        padding-top: 30px;
+        font-size: 20px;
+    }
+    
+    div.contador img {
+        margin-top: 20px;
+    }
+    
+    div.inicio div.lado-esquerdo div.secao-enem a div.data {
+        padding: 15px;
+        font-size: 15px;
+    }
+    
+    /* Mitos e Verdades */
+    .caixa-maior {
+        margin: 20px;
+        padding-bottom: 60px;
+    }
+    
+    .texto-mito {
+        font-size: 18px;
+        padding: 15px;
+    }
+    
+    /* Comentários */
+    .comentarios {
+        padding: 25px;
+        margin: 20px;
+    }
+    
+    .comentarios h2 {
+        font-size: 24px;
+    }
+    
+    .form-comentario input,
+    .form-comentario textarea {
+        padding: 12px;
+    }
+    
+    /* Páginas Internas */
+    .pagina-interna,
+    .pagina-temas,
+    .pagina-videos,
+    .pagina-cursinhos,
+    .pagina-tecnicas,
+    .pagina-prova,
+    .pagina-metodos-estudo,
+    .pagina-provas-enem {
+        padding: 30px 20px;
+    }
+    
+    .conteudo-cronograma {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .bloco,
+    .area-tema,
+    .bloco-videos {
+        padding: 25px;
+    }
+    
+    .cabecalho-pagina h1 {
+        font-size: 24px;
+    }
+    
+    /* Grids */
+    .grid-cursinhos,
+    .grid-tecnicas,
+    .cards-video,
+    .metodos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-video {
+        max-width: 100%;
+    }
+    
+    /* Cards */
+    .card-erro,
+    .card-cursinho,
+    .card-prova,
+    .metodo-card {
+        max-width: 100%;
+    }
+}
+
+/* ==================== */
+/* MEDIA QUERIES - CELULAR PEQUENO (360px) */
+/* ==================== */
+@media (max-width: 360px) {
+    /* Menu Lateral */
+    nav.menu-lateral {
+        width: 100%;
+    }
+    
+    main.ativo {
+        margin-left: 100%;
+    }
+    
+    /* Nav Bar */
+    nav.nav-bar ul li button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Páginas Internas */
+    .pagina-interna,
+    .pagina-temas,
+    .pagina-videos,
+    .pagina-cursinhos,
+    .pagina-tecnicas,
+    .pagina-prova,
+    .pagina-metodos-estudo,
+    .pagina-provas-enem {
+        padding: 25px 15px;
+    }
+    
+    .bloco,
+    .area-tema,
+    .bloco-videos {
+        padding: 20px 15px;
+    }
+    
+    .cabecalho-pagina h1 {
+        font-size: 22px;
+    }
+    
+    .cabecalho-pagina p {
+        font-size: 15px;
+    }
+    
+    /* Textos */
+    .texto-mito,
+    .bloco p,
+    .area-tema .conteudo p,
+    .area-tema .conteudo ul,
+    .tecnica-estudo p,
+    .metodo-card p {
+        font-size: 15px;
+    }
+}
