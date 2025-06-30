@@ -35,15 +35,12 @@ html{
 
 body{
     overflow: hidden;
-    background-color: var(--plano-de-fundo);
     font-family: "poppins";
-    transition: background-color 1s ease;
+
 }
 
 /*area da nav bar*/
 nav.nav-bar ul {
-
-
     background-color: var(--branco);
     transition: background-color 1s ease;
     display: flex;
@@ -71,14 +68,13 @@ nav.nav-bar ul li button{
     border-radius: 50%; 
     background-color: var(--branco);
     color: var(--icones-e-palavras);
-    transition: background-color 1s ease;
+    transition: background-color 1s ease, color 1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 nav.nav-bar ul li button:hover{
-    border-radius: 50%;
     background-color: var(--cor-ao-passar-o-mouse-nos-icones);
     transition: background-color 0.5s ease;
 }
@@ -94,15 +90,15 @@ nav.menu-lateral {
     color: var(--branco-das-palavras);
     background-color: var(--menu-lateral);
     transition: background-color 1s ease;
-    height: calc(100vh - 85px); /* ocupa a altura total, descontando a navbar */
+    height: calc(100vh - 85px);
     width: 400px;
     position: fixed;
     top: 85px;
     left: -400px;
     z-index: 9;
     transition: 500ms;
-    overflow-y: auto;   /* <--- habilita scroll vertical */
-    overflow-x: hidden; /* <--- evita scroll horizontal */
+    overflow-y: auto;   
+    overflow-x: hidden; 
 }
 
 nav.menu-lateral.ativo{
@@ -126,6 +122,7 @@ nav.menu-lateral ul li a{
     gap: 30px;
     padding: 20px 36px;
     margin-bottom: 10PX;
+    transition: background-color 0.5s ease;
 }
 
 nav.menu-lateral ul li a:hover{
@@ -147,6 +144,7 @@ nav.menu-lateral ul li a span.parte{
     line-height: 1;
 }
 
+
 /*main*/
 main{
     height: 100vh;
@@ -154,36 +152,41 @@ main{
     overflow: auto;
     background-color: var(--plano-de-fundo);
     color: var(--icones-e-palavras);
-    transition: margin-left 0.5s ease, color 0.5s ease, background-color 0.5s ease;
+    transition: margin-left 0.5s ease, color 1s ease, background-color 1s ease;
 }
 main.ativo{
     margin-left: 400px;
 }
 
-/*saudações*/
-/* Saudação */
-/* Agrupamento do lado esquerdo (saudação + section) */
+/* Saudação e área ENEM */
+
 div.inicio {
     display: flex;
-    padding-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 10px;
     font-size: 25px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-div.lado-esquerdo {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 50%;
+
+div.lado-esquerdo,
+div.contador {
+    flex: 1 1 500px;
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
 div.bom {
     height: auto;
     margin-bottom: 40px; 
 }
-
 
 div.secao-enem {
     height: auto;
@@ -192,12 +195,16 @@ div.secao-enem {
 
 div.contador {
     height: auto;
-    width: 50%;
+}
+
+div.contador h2{
+    font-size: 30px;
+    margin-bottom: 9px;
 }
 
 div.contador img {
     margin-top: 45px;
-    height: 500px;
+    height: 503px;
     width: 100%;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
     border-radius: 10px;
@@ -207,55 +214,75 @@ div.contador img {
 div.contador img:hover{
     transform: perspective(1000px) translateZ(-20px);
 }
-/*area enem*/
+
+/* Links da área enem */
 div.inicio div.lado-esquerdo div.secao-enem {
-    height: 505px;
+    height: auto;
 }
 
-div.inicio div.lado-esquerdo div.secao-enem a{
+div.inicio div.lado-esquerdo div.bom h2{
+    font-size: 35px;
+}
+
+div.inicio div.lado-esquerdo div.secao-enem h2.title1{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+div.inicio div.lado-esquerdo div.secao-enem a {
     text-decoration: none;
     color: var(--icones-e-palavras);
 }
 
-div.inicio div.lado-esquerdo div.secao-enem a div.data{
+div.inicio div.lado-esquerdo div.secao-enem a div.data {
     background-color: var(--dundo-de-divs);
     color: var(--icones-e-palavras);
     display: flex;
     align-items: center;
     margin-bottom: 19px;
-    margin-right: 60px;
     height: 139px;
-    transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+    transition: background-color 1s ease, color 1s ease, transform 0.5s ease;
     border-radius: 10px;
     padding-left: 30px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
     font-size: 17px;
 }
-div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
+div.inicio div.lado-esquerdo div.secao-enem a div.data:hover {
     transform: perspective(1000px) translateZ(-20px);
 }
 
-/*mitos e verdades*/
-.caixa-maior {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-    margin: 60px;
-    flex-wrap: wrap; /* para responsividade */
-    padding-bottom: 20px;
+/* Mitos e verdades */
+.titulo-mitos {
+    font-size: 32px;
+    margin: 0 auto 20px;
+    color: var(--icones-e-palavras);
+    transition: color 1s ease;
+    font-weight: bold;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
-.caixa-maior .imagem {
-    width: 45%;
-    min-width: 280px;
-    height: auto;
+.caixa-maior {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 30px auto 60px;
+    padding: 0 5%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.caixa-maior .imagem,
+.mitos-e-verdades {
+    flex: 1 1 500px;
+    max-width: 580px;
 }
 
 .caixa-maior .imagem img {
     width: 100%;
-    height: 536px;
+    height: 505px;
+    max-height: 536px;
     border-radius: 10px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
     transition: transform 0.5s ease;
@@ -266,8 +293,6 @@ div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
 }
 
 .mitos-e-verdades {
-    width: 50.2%;
-    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -277,31 +302,36 @@ div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
     background-color: var(--dundo-de-divs);
     padding: 18px 24px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 21px;
     color: var(--icones-e-palavras);
     line-height: 1.6;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transition: background-color 1s ease, transform 0.5s ease;
-    font-size: 21px;
+    transition: background-color 1s ease, transform 0.5s ease, color 1s ease;
 }
-.texto-mito:hover{
+.texto-mito:hover {
     transform: perspective(1000px) translateZ(-20px);
 }
 
-/*comentarios*/
+/* Comentários */
 .comentarios {
     background-color: var(--dundo-de-divs);
     padding: 60px;
-    margin: 60px;
+    margin-top:  60px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 12px;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     transition: background-color 1s ease, transform 0.5s ease;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin-bottom: 140px;
 }
 
 .comentarios h2 {
     font-size: 30px;
     margin-bottom: 30px;
     color: var(--icones-e-palavras);
+    transition: color 1s ease;
 }
 
 .form-comentario {
@@ -316,7 +346,9 @@ div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
     border: none;
     border-radius: 8px;
     font-size: 16px;
-    background-color: #fff;
+    color: var(--icones-e-palavras);
+    background-color: var(--plano-de-fundo);
+    transition: color 1s ease, background-color 1s ease;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     resize: none;
     font-family: "Poppins";
@@ -339,10 +371,8 @@ div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
 }
 
 /*cronograma*/
-.pagina-interna {
-    padding: 60px;
-    margin: 0 auto;
-    max-width: 1400px;
+div.pagina-interna {
+    padding: 40px;
     font-family: "Poppins";
     background-color: var(--plano-de-fundo);
     transition: background-color 1s ease, color 1s ease;
@@ -354,7 +384,7 @@ div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
     margin-bottom: 40px;
 }
 
-.cabecalho-pagina h1 {
+div.pagina-interna section.cabecalho-pagina h1 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -372,9 +402,9 @@ div.inicio div.lado-esquerdo div.secao-enem a div.data:hover{
 .conteudo-cronograma {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-left: 60px;
-    margin-right: 60px;
+    gap: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .bloco {
@@ -921,307 +951,138 @@ main {
   display: block;
 }
 
-/* ==================== */
-/* MEDIA QUERIES - TABLET (768px) */
-/* ==================== */
-@media (max-width: 768px) {
-    /* Menu Lateral */
-    nav.menu-lateral {
-        width: 320px;
+@media (max-width: 550px){
+    div.inicio{
+        padding-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        flex-wrap: wrap;
     }
-    
-    main.ativo {
-        margin-left: 320px;
-    }
-    
-    /* Nav Bar */
-    nav.nav-bar ul {
-        padding: 30px 15px;
-        height: 75px;
-    }
-    
-    nav.nav-bar ul li button {
-        width: 55px;
-        height: 55px;
-    }
-    
-    /* Página Inicial */
-    div.inicio {
-        flex-direction: column;
-        padding-top: 40px;
-        margin: 40px;
-        font-size: 22px;
-    }
-    
-    div.lado-esquerdo, 
-    div.contador {
-        width: 100%;
-    }
-    
-    div.contador img {
-        height: auto;
-        max-height: 400px;
-        margin-top: 30px;
-    }
-    
-    div.inicio div.lado-esquerdo div.secao-enem a div.data {
-        margin-right: 0;
-        height: auto;
-        padding: 20px;
-    }
-    
-    /* Mitos e Verdades */
-    .caixa-maior {
-        flex-direction: column;
-        margin: 40px;
-        gap: 25px;
-    }
-    
-    .caixa-maior .imagem, 
-    .mitos-e-verdades {
-        width: 100%;
-    }
-    
-    .caixa-maior .imagem img {
-        height: auto;
-        max-height: 400px;
-    }
-    
-    /* Páginas Internas */
-    .pagina-interna,
-    .pagina-temas,
-    .pagina-videos,
-    .pagina-cursinhos,
-    .pagina-tecnicas,
-    .pagina-prova,
-    .pagina-metodos-estudo,
-    .pagina-provas-enem {
-        padding: 40px;
-    }
-    
-    .conteudo-cronograma {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-    
-    .bloco,
-    .area-tema,
-    .bloco-videos {
-        padding: 30px;
-    }
-    
-    /* Comentários */
-    .comentarios {
-        padding: 40px;
-        margin: 40px;
-    }
-    
-    /* Grids */
-    .grid-cursinhos,
-    .grid-tecnicas {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    
-    /* Cards */
-    .card-video {
-        max-width: calc(50% - 10px);
-    }
-    
-    .cabecalho-pagina h1 {
-        font-size: 28px;
-    }
-    
-    .cabecalho-pagina p {
-        font-size: 16px;
-    }
-}
 
-/* ==================== */
-/* MEDIA QUERIES - CELULAR (480px) */
-/* ==================== */
-@media (max-width: 480px) {
-    /* Nav Bar */
-    nav.nav-bar ul {
-        height: 65px;
-        padding: 20px 10px;
+    div.bom {
+        margin-bottom: 20px; 
     }
-    
-    nav.nav-bar ul li button {
-        width: 45px;
-        height: 45px;
+
+    div.inicio div.lado-esquerdo div.bom h2{
+        font-size: 30px;
     }
-    
-    nav.nav-bar ul li button i {
-        font-size: 22px;
+
+    div.inicio div.lado-esquerdo div.secao-enem h2.title1{
+        font-size: 25px;
     }
-    
-    /* Menu Lateral */
-    nav.menu-lateral {
-        width: 280px;
-        height: calc(100vh - 65px);
-        top: 65px;
+
+    div.inicio div.lado-esquerdo div.secao-enem a div.data{
+        height: 95px;   
+        font-size: 14px;
+        margin-bottom: 15px;
+        padding-left: 20px;
     }
-    
-    main.ativo {
-        margin-left: 280px;
+
+    div.contador h2{
+        margin-top: -25px;
+        font-size: 25px;
+        margin-bottom: -34px;
     }
-    
-    nav.menu-lateral ul li a {
-        padding: 15px 20px;
-        gap: 20px;
-    }
-    
-    nav.menu-lateral ul li a span.icone {
-        font-size: 22px;
-        width: 22px;
-    }
-    
-    nav.menu-lateral ul li a span.parte {
-        font-size: 18px;
-    }
-    
-    /* Página Inicial */
-    div.inicio {
-        margin: 20px;
-        padding-top: 30px;
-        font-size: 20px;
-    }
-    
+
     div.contador img {
-        margin-top: 20px;
+        height: 320px;
     }
-    
-    div.inicio div.lado-esquerdo div.secao-enem a div.data {
-        padding: 15px;
+
+    .titulo-mitos{
+        font-size: 25px;
+        margin-top: -16px;
+    }
+
+    .caixa-maior{
+        gap: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 30px auto 15px;
+    }
+
+    .caixa-maior .imagem img{
+        height: 340px;
+        margin-top: -10px;
+    }
+
+    .mitos-e-verdades{
+        gap: 15px;
+    }
+
+    .texto-mito{
         font-size: 15px;
+        padding-left: 20px;
     }
-    
-    /* Mitos e Verdades */
-    .caixa-maior {
-        margin: 20px;
-        padding-bottom: 60px;
+
+    .comentarios{
+        margin-top: 46px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 25px;
+        padding-bottom: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 120px;
     }
-    
-    .texto-mito {
-        font-size: 18px;
-        padding: 15px;
+
+    .comentarios h2{
+        font-size: 22px;
+        margin-bottom: 25px;
     }
-    
-    /* Comentários */
-    .comentarios {
-        padding: 25px;
-        margin: 20px;
+
+    .form-comentario{
+        gap: 15px;
     }
-    
-    .comentarios h2 {
-        font-size: 24px;
-    }
-    
+
     .form-comentario input,
-    .form-comentario textarea {
-        padding: 12px;
+    .form-comentario textarea{
+        padding: 14px;
     }
-    
-    /* Páginas Internas */
-    .pagina-interna,
-    .pagina-temas,
-    .pagina-videos,
-    .pagina-cursinhos,
-    .pagina-tecnicas,
-    .pagina-prova,
-    .pagina-metodos-estudo,
-    .pagina-provas-enem {
-        padding: 30px 20px;
-    }
-    
-    .conteudo-cronograma {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    
-    .bloco,
-    .area-tema,
-    .bloco-videos {
-        padding: 25px;
-    }
-    
-    .cabecalho-pagina h1 {
-        font-size: 24px;
-    }
-    
-    /* Grids */
-    .grid-cursinhos,
-    .grid-tecnicas,
-    .cards-video,
-    .metodos-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .card-video {
-        max-width: 100%;
-    }
-    
-    /* Cards */
-    .card-erro,
-    .card-cursinho,
-    .card-prova,
-    .metodo-card {
-        max-width: 100%;
-    }
-}
 
-/* ==================== */
-/* MEDIA QUERIES - CELULAR PEQUENO (360px) */
-/* ==================== */
-@media (max-width: 360px) {
-    /* Menu Lateral */
-    nav.menu-lateral {
-        width: 100%;
+    nav.nav-bar ul{
+        gap: 8px;
+        height: 50px;
+        padding-inline: 1px;
     }
-    
-    main.ativo {
-        margin-left: 100%;
-    }
-    
-    /* Nav Bar */
-    nav.nav-bar ul li button {
-        width: 40px;
+
+    nav.nav-bar ul li button{
         height: 40px;
+        width: 40px;
     }
-    
-    /* Páginas Internas */
-    .pagina-interna,
-    .pagina-temas,
-    .pagina-videos,
-    .pagina-cursinhos,
-    .pagina-tecnicas,
-    .pagina-prova,
-    .pagina-metodos-estudo,
-    .pagina-provas-enem {
-        padding: 25px 15px;
-    }
-    
-    .bloco,
-    .area-tema,
-    .bloco-videos {
-        padding: 20px 15px;
-    }
-    
-    .cabecalho-pagina h1 {
+
+    nav.nav-bar ul li button i{
         font-size: 22px;
     }
-    
-    .cabecalho-pagina p {
-        font-size: 15px;
+
+    nav.menu-lateral {
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        top: 72px;
+        height: calc(100vh - 50px);
     }
     
-    /* Textos */
-    .texto-mito,
-    .bloco p,
-    .area-tema .conteudo p,
-    .area-tema .conteudo ul,
-    .tecnica-estudo p,
-    .metodo-card p {
-        font-size: 15px;
+    nav.menu-lateral.ativo {
+        left: 0;
+    }
+
+    main.ativo{
+        margin-left: 0px;
+    }
+
+    div.conteudo-cronograma{
+        margin-left: 15px;
+        margin-right: 15px;
+        padding:0px ;
+    }
+
+    div.pagina-interna section.cabecalho-pagina h1 {
+        font-size: 26px;
+        padding-top: 25px;
+        margin-bottom: 16px;
+        padding: 0px;
+    }
+    div.pagina-interna section.cabecalho-pagina p{
+        font-size: 20px;
     }
 }
