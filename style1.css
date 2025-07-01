@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    font-size: 10px;
+    --main-color: #00AEEF;
+    --black: #131313;
+    --bg: #010103;
+    --border: rgba(255,255,255,0.3);
+    --neutral-0: #0c0c0c;
+    --neutral-10:#171717;
+    --meutral-30:#a8a29e;
+    --neutral-40: #f5f5f5;
+    --branco: #fff;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+video{
+    width: 100%;
+    
+}
+*{
+    text-decoration: none;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.caixa-video{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.caixa-video video{
+    min-height: 100%;
+    object-fit: cover;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.mascara{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(109deg, rgba(10,12,16,0.99) 15%, rgba(10,12,16,0.7) 50%, rgba(10,12,16,0.99) 85%);
+
+}
+section{
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--bg);
+    border-bottom: 0.1rem solid var(--border);
+    width: 100vw;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 1.5rem 0;
+    position: relative;
+}
+.header section a img {
+    height: 6rem;
+}
+
+.header section nav a{
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: var(--branco);
+    transition: 0.3s linear;
+}
+
+.header section nav a:hover{
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+}
+
+.caixa-principal{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.caixa-principal div{
+    max-width: 60rem;
+}
+.caixa-principal div h1{
+    padding-top: 7rem;
+    color: var(--branco);
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.caixa-principal div p{
+    font-size: 1.7rem;
+    color: var(--branco);
+    font-weight: 400;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.caixa-principal div a{
+    background-color: var(--main-color);
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: var(--branco);
+    padding: 1rem;
+    display: inline-block;
+    border: none;
+    transition: 0.3s linear;
+}
+
+.caixa-principal div a:hover{
+    letter-spacing: 0.1rem;
+}
+
+.caixa-sobre h2{
+    text-align: center;
+    color: var(--branco);
+    text-transform: uppercase;
+    padding-bottom: 1.1rem;
+    font-size: 4rem;
+}
+
+.caixa-sobre h2 span{
+    color: var(--main-color);
+}
+
+.caixa-sobre .sobre-container {
+    display: flex;
+    align-items: center;
+    background-color: #131313;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem {
+    flex: 1 1 45rem;
+    margin-left: 40px;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.caixa-sobre .sobre-container .sobre-texto {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.caixa-sobre .sobre-container .sobre-texto h3 {
+    font-size: 3rem;
+    color: var(--branco);
+}
+
+.caixa-sobre .sobre-container .sobre-texto p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--branco);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.caixa-sobre .sobre-container .sobre-texto a{
+    background-color: var(--main-color);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color:var(--branco);
+    padding: 1rem;
+    display: inline-block;
+    border: none;
+    transition: 0.3s linear;
+    border-radius: 10px;
+}
+.caixa-sobre .sobre-container .sobre-texto a:hover{
+    letter-spacing: 0.1rem;
+}
+
+footer{
+    font-family: 'Inter','sans-serif';
+    width: 100%;
+    color: var(--neutral-40);
+}
+.footer-link{
+    text-decoration: none;
+}
+
+#footer{
+    background-color: var(--neutral-10);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+}
+
+#contatos a img{
+    margin-bottom: 0.75rem;
+    height: 40px;
+}
+
+#midias-sociais{
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#midias-sociais .footer-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#midias-sociais .footer-link{
+    font-size: 1.25rem;
+}
+
+#midias-sociais .footer-link:hover{
+    opacity: 0.8;
+}
+
+
+#instagram{
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook{
+    background-color: #4267b3;
+}
+
+#zap{
+    background-color: #25d366;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style-type: none;
+}
+
+.list .footer-list{
+    color: var(--meutral-30);
+    transition: all 0.4s;
+}
+
+.list .footer-list:hover{
+    color: var(--main-color);
+}
+
+#subscribe{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#subscribe h3{
+    font-size: 1.5rem;
+}
+.list h3{
+    font-size: 1.5rem;
+}
+
+
+
+#input{
+    display: flex;
+    align-items: center;
+    background-color: var(--neutral-0);
+    border-radius: 4px;
+}
+
+#input input{
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input button{
+    background-color: var(--main-color);
+    border: none;
+    color: var(--neutral-40);
+    padding: 0px 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+}
+
+#input button:hover{
+    opacity: 0.8;
+    transition: all 0.4s;
+}
+
+#copy{
+    display: flex;
+    justify-content: center;
+    background-color: var(--neutral-0);
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+@media (max-width: 600px) {
+   html {
+    font-size: 9px;
+   }
+
+   .header .section1 a img{
+    height: 40px;
+    padding-left: 7px;
+    
+   }
+
+   .header .section1 nav a{
+    display: flex;
+    font-size: 10px;
+   }
+
+  .caixa-principal div h1 {
+    font-size: 3.5rem;
+    padding-top: 3rem;
+  }
+
+  .caixa-principal div p {
+    font-size: 1.5rem;
+  }
+
+  .caixa-principal div a {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  .caixa-sobre h2 {
+    font-size: 3rem;
+  }
+
+  .caixa-sobre .sobre-container {
+    flex-direction: column;
+    padding: 1rem;
+
+  }
+
+  .caixa-sobre .sobre-container .sobre-imagem {
+    margin-left: 0;
+    flex: 1 1 auto; /* Adicionado */
+  }
+
+  .caixa-sobre .sobre-container .sobre-texto h3 {
+    font-size: 2.2rem;
+  }
+
+  .caixa-sobre .sobre-container .sobre-texto p {
+    font-size: 1.4rem;
+  }
+
+  .caixa-sobre .sobre-container .sobre-texto a {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  #footer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  #midias-sociais {
+    justify-content: flex-start;
+  }
+
+  .list h3,
+  #subscribe h3 {
+    font-size: 1.4rem;
+  }
+
+  .list .footer-list,
+  #subscribe p {
+    font-size: 1.3rem;
+  }
+
+  #input input {
+    padding: 0.6rem;
+  }
+
+  #input button {
+    font-size: 1rem;
+    padding: 0px 1rem;
+  }
+
+  #copy {
+    font-size: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+/* Botão hamburguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 24px;
+  z-index: 10001; /* Acima do overlay e nav */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--branco);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Animação ao abrir */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* NAV padrão em desktop */
+.header section nav {
+  display: flex;
+  gap: 2rem;
+  transition: right 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .header section nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background-color: var(--neutral-10); /* Menu visível */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8rem 2rem;
+    z-index: 10000; /* Acima do overlay */
+    transition: right 0.3s ease;
+  }
+
+  .header section nav.active {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .header section nav a {
+    font-size: 2rem;
+    margin: 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+}
+
+/* Fundo escuro atrás do menu */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999; /* Abaixo do menu */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
